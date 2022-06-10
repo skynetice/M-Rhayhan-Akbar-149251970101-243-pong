@@ -10,7 +10,6 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
         Debug.Log("Created By Muhammad Rhayhan Akbar - 149251970101-243");
     }
-    }
 
     public void OpenAuthor()
     {
