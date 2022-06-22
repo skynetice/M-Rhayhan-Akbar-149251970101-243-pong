@@ -6,10 +6,13 @@ public class BallControl : MonoBehaviour
 {
 
     public Vector2 speed;
+    public Vector2 resetPosition;
 
     private Rigidbody2D rig;
 
-    public Vector2 resetPosition; 
+    public string Paddle = "Square-Right";
+
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -24,8 +27,10 @@ public class BallControl : MonoBehaviour
         
     }
 
+    // reset bola setelah goal
      public void ResetBall() 
     { 
+
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 2); 
     } 
 
@@ -37,5 +42,17 @@ public class BallControl : MonoBehaviour
     public void ActivatePUSpeedDown(float magnitude) 
     { 
         rig.velocity /= magnitude; 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        string lastCollision = collisionInfo.collider.tag;
+        string name = collisionInfo.collider.name;
+        if (lastCollision == "Player")
+        {
+            Paddle = name;
+            Debug.Log(Paddle);
+        }
+
     }
 }
