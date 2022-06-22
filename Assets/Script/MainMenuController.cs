@@ -16,8 +16,8 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Created By Muhammad Rhayhan Akbar");
     }
 
-    public void OpenInstruction()
+    public void OpenCredit()
     {
-        SceneManager.LoadScene("Instruction");
+        SceneManager.LoadScene("Credit");
     }
 }
